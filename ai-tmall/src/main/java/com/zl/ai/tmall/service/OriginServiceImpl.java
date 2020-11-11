@@ -7,6 +7,9 @@ import com.alibaba.da.coin.ide.spi.standard.TaskResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -42,7 +45,15 @@ public class OriginServiceImpl implements OriginService{
         TaskResult result = new TaskResult();
         //请求服务并填充回复语句
         log.info("============接收到指令，正在给飞机加油============");
-        //do something
+        try {
+            Process ipconfig = Runtime.getRuntime().exec("ipconfig");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(ipconfig.getInputStream(),"GBK"));
+            while(bufferedReader.ready()){
+                log.info(bufferedReader.readLine());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         log.info("===========飞机加油完毕，准备起飞=================");
         try {
             result.setReply("呜呼~起飞，boot~~~~");
