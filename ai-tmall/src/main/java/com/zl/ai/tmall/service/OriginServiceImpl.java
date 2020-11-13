@@ -22,7 +22,6 @@ import java.util.stream.Collectors;
 public class OriginServiceImpl implements OriginService{
     @Override
     public TaskResult boot(TaskQuery taskQuery) {
-        log.info("WeatherHandleImpl execute...");
 
         //从请求中获取意图参数以及参数值
         Map<String, String> paramMap = taskQuery
@@ -34,7 +33,6 @@ public class OriginServiceImpl implements OriginService{
         log.info("paramMap ：" + paramMap.toString());
         if (taskQuery.getIntentName().equals("起飞")) {
             return executeBoot();
-            //如果意图是询问天气情况，则执行天气查询逻辑
         } else if(taskQuery.getIntentName().equals("降落")){
             return executeShutDown();
         }else{

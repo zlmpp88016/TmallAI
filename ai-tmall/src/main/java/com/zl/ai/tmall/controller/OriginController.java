@@ -1,12 +1,14 @@
 package com.zl.ai.tmall.controller;
 
 import com.alibaba.da.coin.ide.spi.standard.ResultModel;
+import com.alibaba.da.coin.ide.spi.standard.SecurityWrapperTaskQuery;
 import com.alibaba.da.coin.ide.spi.standard.TaskQuery;
 import com.alibaba.da.coin.ide.spi.standard.TaskResult;
 import com.alibaba.da.coin.ide.spi.trans.MetaFormat;
 import com.zl.ai.tmall.service.OriginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,9 +28,8 @@ public class OriginController {
      * @param taskQuery
      * @return
      */
-    @PostMapping(value = "/api/boot")
+    @PostMapping(value = "/tmall/api/boot")
     public ResultModel<TaskResult> getResponse(@RequestBody String taskQuery) {
-
         /**
          * 将开发者平台识别到的语义理解的结果（json字符串格式）转换成TaskQuery
          */
