@@ -11,12 +11,10 @@ import java.io.*;
  * @date:2020/11/13 10:59
  */
 public class RequestWrapper extends HttpServletRequestWrapper {
-    private  String body=null;
+    private  String body;
     public RequestWrapper(HttpServletRequest request) throws IOException {
         super(request);
-    }
-    public void initString(String body){
-        this.body=body;
+        this.body = ParamUtils.decriptForTmall(request.getInputStream());
     }
     @Override
     public ServletInputStream getInputStream() throws IOException {

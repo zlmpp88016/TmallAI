@@ -25,8 +25,7 @@ public class VerifyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
         String url = request.getRequestURL().toString();
         if(url.contains(PREFIX_TMALL_API_PATH)){
-            String s = ParamUtils.decriptForTmall(request.getInputStream());
-            new RequestWrapper(request).initString(s);
+            new RequestWrapper(request);
         }
         return true;
     }
