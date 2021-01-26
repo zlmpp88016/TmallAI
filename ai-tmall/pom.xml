@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.zl</groupId>
         <artifactId>ai</artifactId>
-        <version>1.0.1-RELEASE</version>
+        <version>1.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>ai-tmall</artifactId>
     <packaging>jar</packaging>
