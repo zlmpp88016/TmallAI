@@ -6,12 +6,18 @@
     <parent>
         <groupId>com.zl</groupId>
         <artifactId>ai</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>ai-tmall</artifactId>
     <packaging>jar</packaging>
 
         <dependencies>
+            <!--tmall jdk-->
+            <dependency>
+                <groupId>com.alibaba.da.coin</groupId>
+                <artifactId>semantic-execute-meta</artifactId>
+                <version>1.1.18-REALEASE</version>
+            </dependency>
             <!--web模块-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -68,6 +74,10 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.4</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
             </dependency>
         </dependencies>
 
